@@ -1,5 +1,6 @@
-# Web3Wave R2W3 Cohort ll
-[Project Tamplate](https://github.com/jemi2k/Project-Proposal-Templates/tree/main)
+# Web3Wave or web3_event
+
+# [Project Proposal Template](https://github.com/jemi2k/Project-Proposal-Templates/tree/main)
 
 ## Technology Stack & Tools
 
@@ -29,4 +30,3 @@ In a separate terminal execute:
 
 ### 6. Start frontend
 `$ npm run start`
-
