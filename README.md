@@ -1,6 +1,6 @@
-# Web3Wave or web3_event
+# Web3Wave Web3_Event
 
-# [Project Proposal Template](https://github.com/jemi2k/Project-Proposal-Templates/tree/main)
+# [Project Proposal](https://github.com/jemi2k/web3wave_web3event/blob/master/Project-Proposal-Template.md)
 
 ## Technology Stack & Tools
 
