@@ -1,4 +1,4 @@
-# R2W3 Cohort ll Proposal Template
+# R2W3 Cohort ll Proposal Proposal
 
 ## **Project Details Section**
 
