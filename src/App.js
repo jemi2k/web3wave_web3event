@@ -3,24 +3,26 @@ import { ethers } from 'ethers'
 
 // Components
 import Navigation from './components/Navigation'
-import Sort from './components/Sort'
-import Card from './components/Card'
 import SeatChart from './components/SeatChart'
 
 // ABIs
-import TokenMaster from './abis/TokenMaster.json'
+import Web3Event from './abis/Web3Event.json'
 
 // Config
 import config from './config.json'
+import Footer from './components/Footer'
+import Card1 from './components/Card1'
+import ContactUs from './components/ContactUs'
+import Card2 from './components/Card2'
+
 
 function App() {
   const [provider, setProvider] = useState(null)
   const [account, setAccount] = useState(null)
 
-  const [tokenMaster, setTokenMaster] = useState(null)
-  const [occasions, setOccasions] = useState([])
-
-  const [occasion, setOccasion] = useState({})
+  const [web3Event, setWeb3Event] = useState(null)
+  const [eventts, setEventts] = useState([])
+  const [eventt, setEventt] = useState({})
   const [toggle, setToggle] = useState(false)
 
   const loadBlockchainData = async () => {
@@ -28,18 +30,19 @@ function App() {
     setProvider(provider)
 
     const network = await provider.getNetwork()
-    const tokenMaster = new ethers.Contract(config[network.chainId].TokenMaster.address, TokenMaster, provider)
-    setTokenMaster(tokenMaster)
+    const web3Event = new ethers.Contract(config[network.chainId].Web3Event.address, Web3Event, provider)
+    setWeb3Event(web3Event)
 
-    const totalOccasions = await tokenMaster.totalOccasions()
-    const occasions = []
+    const totalEventts = await web3Event.totalEventts()
+    const eventts = []
 
-    for (var i = 1; i <= totalOccasions; i++) {
-      const occasion = await tokenMaster.getOccasion(i)
-      occasions.push(occasion)
+    for (var i = 1; i <= totalEventts; i++) {
+      const eventt = await web3Event.getEventt(i)
+      eventts.push(eventt)
     }
-
-    setOccasions(occasions)
+    
+    setEventts(eventts)
+    
 
     window.ethereum.on('accountsChanged', async () => {
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
@@ -53,40 +56,50 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <> 
+    
       <header>
         <Navigation account={account} setAccount={setAccount} />
 
-        <h2 className="header__title"><strong>Event</strong> Tickets</h2>
+         {/* <h2 className="header__title"><strong>Event</strong> Tickets</h2>  */}
       </header>
 
-      <Sort />
-
-      <div className='cards'>
-        {occasions.map((occasion, index) => (
-          <Card
-            occasion={occasion}
+      {eventts.map((eventt, index) => (
+     <Card2 
+            eventt={eventt}
             id={index + 1}
-            tokenMaster={tokenMaster}
+            web3Event={web3Event}
+            // tokenMaster={tokenMaster}
             provider={provider}
             account={account}
             toggle={toggle}
             setToggle={setToggle}
-            setOccasion={setOccasion}
+            setEventt={setEventt}
+            // setOccasion={setOccasion}
             key={index}
-          />
-        ))}
-      </div>
+      />
+
+     ))}
+     <Card1 />
+     
+
 
       {toggle && (
         <SeatChart
-          occasion={occasion}
-          tokenMaster={tokenMaster}
+          eventt={eventt}
+          
+          web3Event={web3Event}
+         
           provider={provider}
           setToggle={setToggle}
         />
       )}
-    </div>
+
+     <ContactUs /> 
+    <footer>
+      <Footer />
+      </footer>
+    </>
   );
 }
 

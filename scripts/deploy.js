@@ -5,27 +5,27 @@ const tokens = (n) => {
 }
 
 async function main() {
-  // Setup accounts & variables
-  const [deployer] = await ethers.getSigners()
-  const NAME = "TokenMaster"
-  const SYMBOL = "TM"
+  // <-- Setup accounts & variables, seller = deployer -->
+  const [seller] = await ethers.getSigners()
+  const NAME = "Web3Event"
+  const SYMBOL = "WE"
 
-  // Deploy contract
-  const TokenMaster = await ethers.getContractFactory("TokenMaster")
-  const tokenMaster = await TokenMaster.deploy(NAME, SYMBOL)
-  await tokenMaster.deployed()
+  // <-- deploy contract --> 
+  const Web3Event = await ethers.getContractFactory("Web3Event")
+  const web3Event = await Web3Event.deploy(NAME, SYMBOL)
+  await web3Event.deployed()
 
-  console.log(`Deployed TokenMaster Contract at: ${tokenMaster.address}\n`)
+  console.log(`Deployed Web3Event Contract at: ${web3Event.address}\n`)
 
   // List 6 events
-  const occasions = [
+  const eventts = [
     {
-      name: "UFC Miami",
+      name: "Crypto Mafia",
       cost: tokens(3),
       tickets: 0,
       date: "May 31",
       time: "6:00PM EST",
-      location: "Miami-Dade Arena - Miami, FL"
+      location: "London, UK"
     },
     {
       name: "ETH Tokyo",
@@ -62,18 +62,18 @@ async function main() {
   ]
 
   for (var i = 0; i < 5; i++) {
-    const transaction = await tokenMaster.connect(deployer).list(
-      occasions[i].name,
-      occasions[i].cost,
-      occasions[i].tickets,
-      occasions[i].date,
-      occasions[i].time,
-      occasions[i].location,
+    const transaction = await web3Event.connect(seller).list(
+      eventts[i].name,
+      eventts[i].cost,
+      eventts[i].tickets,
+      eventts[i].date,
+      eventts[i].time,
+      eventts[i].location,
     )
 
     await transaction.wait()
 
-    console.log(`Listed Event ${i + 1}: ${occasions[i].name}`)
+    console.log(`Listed Event ${i + 1}: ${eventts[i].name}`)
   }
 }
 

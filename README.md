@@ -1,17 +1,15 @@
-# Tokenmaster
+# Web3Wave R2W3 Cohort ll
+[Project Tamplate](https://github.com/jemi2k/Project-Proposal-Templates/tree/main)
 
 ## Technology Stack & Tools
 
-- Solidity (Writing Smart Contracts & Tests)
-- Javascript (React & Testing)
+- Solidity 
+- Javascript 
 - [Hardhat](https://hardhat.org/) (Development Framework)
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
 - [MetaMask](https://metamask.io/)
 
-## Requirements For Initial Setup
-- Install [NodeJS](https://nodejs.org/en/). Recommended to use the LTS version.
-- Install [MetaMask](https://metamask.io/) on your browser.
 
 ## Setting Up
 ### 1. Clone/Download the Repository
@@ -31,3 +29,4 @@ In a separate terminal execute:
 
 ### 6. Start frontend
 `$ npm run start`
+
