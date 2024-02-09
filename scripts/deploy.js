@@ -28,23 +28,23 @@ async function main() {
       location: "London, UK"
     },
     {
-      name: "ETH Tokyo",
+      name: "Web3 Wave Event",
       cost: tokens(1),
       tickets: 125,
       date: "Jun 2",
       time: "1:00PM JST",
-      location: "Tokyo, Japan"
+      location: "Dubai, UAE"
     },
     {
-      name: "ETH Privacy Hackathon",
+      name: "Metaschool R2W3 Event",
       cost: tokens(0.25),
       tickets: 200,
       date: "Jun 9",
       time: "10:00AM TRT",
-      location: "Turkey, Istanbul"
+      location: "Singapore"
     },
     {
-      name: "Dallas Mavericks vs. San Antonio Spurs",
+      name: "Bitcoin the Future",
       cost: tokens(5),
       tickets: 0,
       date: "Jun 11",
@@ -52,7 +52,7 @@ async function main() {
       location: "American Airlines Center - Dallas, TX"
     },
     {
-      name: "ETH Global Toronto",
+      name: "Crypto in Toronto",
       cost: tokens(1.5),
       tickets: 125,
       date: "Jun 23",

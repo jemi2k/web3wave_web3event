@@ -60,8 +60,6 @@ function App() {
     
       <header>
         <Navigation account={account} setAccount={setAccount} />
-
-         {/* <h2 className="header__title"><strong>Event</strong> Tickets</h2>  */}
       </header>
 
       {eventts.map((eventt, index) => (
@@ -69,13 +67,11 @@ function App() {
             eventt={eventt}
             id={index + 1}
             web3Event={web3Event}
-            // tokenMaster={tokenMaster}
             provider={provider}
             account={account}
             toggle={toggle}
             setToggle={setToggle}
             setEventt={setEventt}
-            // setOccasion={setOccasion}
             key={index}
       />
 
