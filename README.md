@@ -1,4 +1,4 @@
-# Web3Wave or web3_event
+# Web3Wave Web3_Event
 
 # [Project Proposal Template](https://github.com/jemi2k/Project-Proposal-Templates/tree/main)
 
