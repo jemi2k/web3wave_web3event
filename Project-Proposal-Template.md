@@ -1,4 +1,4 @@
-# R2W3 Cohort ll Proposal Proposal
+# R2W3 Cohort ll Proposal
 
 ## **Project Details Section**
 
