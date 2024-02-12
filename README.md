@@ -1,7 +1,8 @@
 # Web3Wave Web3_Event
 
 # [Project Proposal](https://github.com/jemi2k/web3wave_web3event/blob/master/Project-Proposal-Template.md)
-
+# [Youtube](https://www.youtube.com/watch?v=6s0ljaVUvFs)
+# [Website](https://web3wave.vercel.app/) Note:Note: Before running the website, you have to run a local node and deploy to the local node. Refer to the README for further details.
 ## Technology Stack & Tools
 
 - Solidity 
