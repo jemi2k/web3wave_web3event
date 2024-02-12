@@ -17,7 +17,7 @@ async function main() {
 
   console.log(`Deployed Web3Event Contract at: ${web3Event.address}\n`)
 
-  // List 6 events
+  // List 10 events
   const eventts = [
     {
       name: "Crypto Mafia",
@@ -52,16 +52,56 @@ async function main() {
       location: "American Airlines Center - Dallas, TX"
     },
     {
-      name: "Crypto in Toronto",
+      name: "Web3 Wave Summit in Addis Ababa",
       cost: tokens(1.5),
       tickets: 125,
-      date: "Jun 23",
+      date: "Feb 24",
       time: "11:00AM EST",
-      location: "Toronto, Canada"
+      location: "Addis Ababa, Ethiopia"
+    },
+    {
+      name: "MetaVerse Second Edd",
+      cost: tokens(0.5),
+      tickets: 125,
+      date: "Jun 24",
+      time: "11:00AM EST",
+      location: "The Hat, Kigali, Rawand"
+    },
+    {
+      name: "Ai plus Blockchain In Dubai",
+      cost: tokens(1.0),
+      tickets: 125,
+      date: "Jul 24",
+      time: "11:00AM EST",
+      location: "Delli, India"
+    },
+    {
+      name: "Crypto for All Summit ",
+      cost: tokens(1.2),
+      tickets: 125,
+      date: "Jan 2",
+      time: "11:00AM EST",
+      location: "Nairobi, kenya"
+    },
+    {
+      name: "Alt Coin Dev Fest Bangalore",
+      cost: tokens(1.1),
+      tickets: 125,
+      date: "Sep 8",
+      time: "11:00AM EST",
+      location: "Start-up Hub, Banlore, India"
+    },
+    {
+      name: "Bitcoin for All festivals at London ",
+      cost: tokens(1.4),
+      tickets: 125,
+      date: "Dec 12",
+      time: "11:00AM EST",
+      location: "22 new, London, UK"
     }
   ]
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < 10; i++) {
     const transaction = await web3Event.connect(seller).list(
       eventts[i].name,
       eventts[i].cost,

@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
-
-// Import Components
+import logo from '../assets/logo.png';
 import Seat from './Seat'
 
-// Import Assets
 import close from '../assets/close.svg'
 
 const SeatChart = ({ eventt, web3Event, provider, setToggle }) => {
@@ -39,8 +37,15 @@ const SeatChart = ({ eventt, web3Event, provider, setToggle }) => {
         </button>
 
         <div className="occasion__stage">
-          <strong>STAGE</strong>
-        </div>
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src={logo} className="h-8" alt="Logo"/>
+      <span className="self-center text-2xl font-semibold 
+      whitespace-nowrap dark:text-white">Web3Wave NFT Tickets</span>
+      <span className="text-bottom text-1xl  
+      whitespace-nowrap dark:text-white">If it's a 🔵 circle, it's purchased.</span>
+  </a>
+          
+          </div>
 
         {seatsTaken && Array(25).fill(1).map((e, i) =>
           <Seat
@@ -57,7 +62,7 @@ const SeatChart = ({ eventt, web3Event, provider, setToggle }) => {
         )}
 
         <div className="occasion__spacer--1 ">
-          <strong>WALKWAY</strong>
+          <strong>VIP 1</strong>
         </div>
 
         {seatsTaken && Array(Number(eventt.maxTickets) - 50).fill(1).map((e, i) =>
@@ -75,7 +80,7 @@ const SeatChart = ({ eventt, web3Event, provider, setToggle }) => {
         )}
 
         <div className="occasion__spacer--2">
-          <strong>WALKWAY</strong>
+          <strong>VIP 2</strong>
         </div>
 
         {seatsTaken && Array(25).fill(1).map((e, i) =>

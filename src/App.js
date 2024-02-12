@@ -62,8 +62,11 @@ function App() {
         <Navigation account={account} setAccount={setAccount} />
       </header>
 
+      <section className="text-gray-600 body-font">
+  <div className="container px-5 py-24 mx-auto">
+    <div className="flex flex-wrap -m-4">
       {eventts.map((eventt, index) => (
-     <Card2 
+     <Card1 
             eventt={eventt}
             id={index + 1}
             web3Event={web3Event}
@@ -76,7 +79,11 @@ function App() {
       />
 
      ))}
-     <Card1 />
+      </div>
+  </div>
+</section>
+     {/* <Card2 /> */}
+   
      
 
 

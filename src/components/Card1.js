@@ -1,112 +1,68 @@
 import React from 'react'
-
 import { ethers } from 'ethers'
 
 
-const Card1 = ({ eventt, toggle, setToggle, setEventt}) => {
+
+
+const Card1 = ({ eventt, toggle, setToggle, setEventt }) => {
   const togglePop = () => {
-    setEventt(eventt)
-    toggle ? setToggle(false) : setToggle(true)
-  } 
+    setEventt(eventt);
+    toggle ? setToggle(false) : setToggle(true);
+  };
 
-return (
-	<>
-	<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -my-8">
-      <div class="py-8 px-4 lg:w-1/3">
-        <div class="h-full flex items-start">
-          <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none">
-            <span class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">
-              Jul{eventt.date}</span>
-            <span class="font-medium text-lg text-gray-800 title-font leading-none">
-              {eventt.time}</span>
-          </div>
-          <div class="flex-grow pl-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1">
-              CATEGORY {eventt.name}</h2>
-            <h1 class="title-font text-xl font-medium text-gray-900 mb-3">
-              The 400 Blows {eventt.location} </h1>
-            <p class="leading-relaxed mb-5">
-              Photo booth fam kinfolk .</p>
-            <a class="inline-flex items-center">
-              <img alt="blog" src="https://dummyimage.com/103x103" class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center" />
-              <span class="flex-grow flex flex-col pl-3">
-                <span class="title-font font-medium text-gray-900">
-                  {ethers.utils.formatUnits(eventt.cost.toString(), 'ether')} ETH
-                  Alper Kamu</span>
-
-         <span class="title-font font-medium text-gray-900">
-        {eventt.tickets.toString() === "0" ? (
-          <button
-            type="button"
-            className=''
-            disabled
-          >
-            Sold Out
-          </button>
-        ) : (
-          <button
-            type="button"
-            className=''
-            onClick={() => togglePop()}
-          >
-            View Seats
-          </button>
-        )}
-                  </span>
+  return (
+    <div className="p-4 lg:w-1/3">
+      <div className="rounded overflow-hidden shadow-lg">
+        <div className="p-8">
+          <div className="flex flex-col items-start">
+            <span className="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">
+              {eventt.date}
+            </span>
+            <span className="font-medium text-lg text-gray-800 title-font mb-4">
+              {eventt.time}
+            </span>
+            <h2 className="tracking-widest text-xl title-font font-medium text-indigo-500 mb-1">
+              {eventt.name}
+            </h2>
+            <h1 className="title-font text-x1 font-medium text-gray-900 mb-3">
+              {eventt.location}
+            </h1>
+            <p className="leading-relaxed mb-5">NFT Photo</p>
+            <a className="inline-flex items-center">
+              <img
+                alt="blog"
+                src="https://dummyimage.com/103x103"
+                className="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center"
+              />
+              <span className="flex-grow flex flex-col pl-3">
+                <span className="title-font font-medium text-gray-900">
+                  {ethers.utils.formatUnits(
+                    eventt.cost.toString(),
+                    'ether'
+                  )}{' '}
+                  ETH
+                </span>
+                <span className="title-font font-medium text-gray-900">
+                  {eventt.tickets.toString() === '0' ? (
+                    <button className="bg-red-500  text-white py-1 px-1 
+                    rounded" type="button" disabled>
+                      Sold Out
+                    </button>
+                  ) : (
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white 
+                     py-1 px-1 rounded" type="button" onClick={togglePop}>
+                      View Seats
+                    </button>
+                  )}
+                </span>
               </span>
             </a>
           </div>
         </div>
       </div>
-
-    
-
-
-      {/* <div class="py-8 px-4 lg:w-1/3">
-        <div class="h-full flex items-start">
-          <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none">
-            <span class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">Jul</span>
-            <span class="font-medium text-lg text-gray-800 title-font leading-none">18</span>
-          </div>
-          <div class="flex-grow pl-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1">CATEGORY</h2>
-            <h1 class="title-font text-xl font-medium text-gray-900 mb-3">Shooting Stars</h1>
-            <p class="leading-relaxed mb-5">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            <a class="inline-flex items-center">
-              <img alt="blog" src="https://dummyimage.com/102x102" class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center" />
-              <span class="flex-grow flex flex-col pl-3">
-                <span class="title-font font-medium text-gray-900">Holden Caulfield</span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="py-8 px-4 lg:w-1/3">
-        <div class="h-full flex items-start">
-          <div class="w-12 flex-shrink-0 flex flex-col text-center leading-none">
-            <span class="text-gray-500 pb-2 mb-2 border-b-2 border-gray-200">Jul</span>
-            <span class="font-medium text-lg text-gray-800 title-font leading-none">18</span>
-          </div>
-          <div class="flex-grow pl-6">
-            <h2 class="tracking-widest text-xs title-font font-medium text-indigo-500 mb-1">CATEGORY</h2>
-            <h1 class="title-font text-xl font-medium text-gray-900 mb-3">Neptune</h1>
-            <p class="leading-relaxed mb-5">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-            <a class="inline-flex items-center">
-              <img alt="blog" src="https://dummyimage.com/101x101" class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center" />
-              <span class="flex-grow flex flex-col pl-3">
-                <span class="title-font font-medium text-gray-900">Henry Letham</span>
-              </span>
-            </a>
-          </div>
-        </div>
-      </div> */}
     </div>
-  </div>
-</section>
- </>
-  )
-}
+  );
+};
 
-export default Card1
+export default Card1;
+
