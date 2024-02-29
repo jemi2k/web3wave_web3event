@@ -6,11 +6,7 @@
 
 # Web3Wave
 
-### **What are you planning to build?**
-
 I am building Web3Wave, a groundbreaking event management platform integrating NFT ticketing for seamless access to events on the blockchain.
-
-### **Project Breakdown**
 
 **Why Choose Web3Wave?**
 
